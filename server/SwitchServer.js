@@ -25,6 +25,15 @@ module.exports = class SwitchServer{
 		});
 
 
+		self.router.get('/off',function(req,res){
+			console.log("off!");
+			new SwitchManager().TurnOffBulb(
+			req.user,
+			function(err,result){
+				//res.send(JSON.stringify({result:result}));
+	    	});
+		});
+
 
 	}
 }

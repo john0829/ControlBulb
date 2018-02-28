@@ -30,12 +30,25 @@ function TurnOnBulb(){
 	});
 
 	$("#closeLight").click(function(){
-		alert("open!");
+		//alert("open!");
+		UploadOffData();
 	});
 }
 
 function UploadOnData(){
 	var apiUrl = GetServerUrl() + "/switch/on";
+	var callback = function(msg){
+		var object = JSON.parse(msg);
+		if(object.success)
+		{
+			console.log("success");
+		}
+	}
+	AjaxGet(apiUrl,callback);
+}
+
+function UploadOffData(){
+	var apiUrl = GetServerUrl() + "/switch/off";
 	var callback = function(msg){
 		var object = JSON.parse(msg);
 		if(object.success)

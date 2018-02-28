@@ -19,4 +19,19 @@ module.exports = class SwitchManager{
 		});
 
 	}
+
+	TurnOffBulb(attribute,callback){
+		console.log("close lite!");
+		var PythonShell = require('python-shell');
+		var options = {
+		    mode: 'json',
+		    pythonOptions: ['-u'],
+		    scriptPath: './',
+		};
+		var test = new PythonShell('TurnOff.py', options);
+		test.on('message',function (message) {
+		    // console.log(message);
+		});
+
+	}
 }

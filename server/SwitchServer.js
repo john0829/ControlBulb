@@ -14,13 +14,13 @@ module.exports = class SwitchServer{
 
 	SetApi(){
 		var self = this;
-		
+
 		self.router.get('/on',function(req,res){
 			console.log("on!");
 			new SwitchManager().TurnOnBulb(
 			req.user,
 			function(err,result){
-				res.send(JSON.stringify({result:result}));
+				//res.send(JSON.stringify({result:result}));
 	    	});
 		});
 

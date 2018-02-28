@@ -37,7 +37,7 @@ function TurnOnBulb(){
 function UploadOnData(){
 	var apiUrl = GetServerUrl() + "/switch/on";
 	var callback = function(msg){
-		//var object = JSON.parse(msg);
+		var object = JSON.parse(msg);
 		if(object.success)
 		{
 			console.log("success");

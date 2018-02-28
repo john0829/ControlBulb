@@ -15,7 +15,7 @@ module.exports = class SwitchManager{
 		};
 		var test = new PythonShell('TurnOn.py', options);
 		test.on('message',function (message) {
-		    console.log(message);
+		    // console.log(message);
 		});
 
 	}

@@ -3,10 +3,11 @@
 module.exports = class SwitchManager{
 
 	constructor(){
-		var PythonShell = require('python-shell');
+		
 	}
 
 	TurnOnBulb(attribute,callback){
+		var PythonShell = require('python-shell');
 		console.log("open lite!");
 		var options = {
 		    mode: 'json',
@@ -19,6 +20,7 @@ module.exports = class SwitchManager{
 	}
 
 	TurnOffBulb(attribute,callback){
+		var PythonShell = require('python-shell');
 		console.log("close lite!");
 		var options = {
 		    mode: 'json',

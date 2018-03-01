@@ -7,4 +7,4 @@ GPIO.setup(LED_PIN, GPIO.OUT)
 
 GPIO.output(LED_PIN, 0)
 GPIO.setwarnings(False)
-GPIO.cleanup()
+# GPIO.cleanup()

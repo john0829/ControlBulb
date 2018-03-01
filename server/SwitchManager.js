@@ -3,35 +3,30 @@
 module.exports = class SwitchManager{
 
 	constructor(){
+		var PythonShell = require('python-shell');
 	}
 
 	TurnOnBulb(attribute,callback){
 		console.log("open lite!");
-		var PythonShell = require('python-shell');
 		var options = {
 		    mode: 'json',
 		    pythonOptions: ['-u'],
 		    scriptPath: './',
 		};
 		var test = new PythonShell('TurnOn.py', options);
-		test.on('message',function (message) {
-		    // console.log(message);
-		});
+		test.end();
 
 	}
 
 	TurnOffBulb(attribute,callback){
 		console.log("close lite!");
-		var PythonShell = require('python-shell');
 		var options = {
 		    mode: 'json',
 		    pythonOptions: ['-u'],
 		    scriptPath: './',
 		};
 		var test = new PythonShell('TurnOff.py', options);
-		test.on('message',function (message) {
-		    // console.log(message);
-		});
+		test.end();
 
 	}
 }

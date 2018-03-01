@@ -17,21 +17,15 @@ module.exports = class SwitchServer{
 
 		self.router.get('/on',function(req,res){
 			console.log("on!");
-			new SwitchManager().TurnOnBulb(
-			req.user,
-			function(err,result){
-				//res.send(JSON.stringify({result:result}));
-	    	});
+			new SwitchManager().TurnOnBulb(req.user)
+			res.end("It's On");
 		});
 
 
 		self.router.get('/off',function(req,res){
 			console.log("off!");
-			new SwitchManager().TurnOffBulb(
-			req.user,
-			function(err,result){
-				//res.send(JSON.stringify({result:result}));
-	    	});
+			new SwitchManager().TurnOffBulb(req.user);
+			res.end("It's Off");
 		});
 
 

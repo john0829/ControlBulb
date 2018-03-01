@@ -15,8 +15,7 @@ module.exports = class SwitchManager{
 		    scriptPath: './',
 		};
 		var test = new PythonShell('TurnOn.py', options);
-		test.end();
-
+		//test.end();
 	}
 
 	TurnOffBulb(attribute,callback){
@@ -28,7 +27,6 @@ module.exports = class SwitchManager{
 		    scriptPath: './',
 		};
 		var test = new PythonShell('TurnOff.py', options);
-		test.end();
-
+		//test.end();
 	}
 }

@@ -1,0 +1,24 @@
+/* Main */
+	html,body{
+	}
+
+
+#button{
+	text-align: center;
+	margin-left: 35%;
+}
+
+#button > div{
+	font-size: 50px;
+}
+
+#button > div:nth-child(1){
+	background-color: orange;
+	width:50%;
+	margin-bottom: 10%;
+}
+
+#button > div:nth-child(2){
+	background-color: red;
+	width:50%;
+}

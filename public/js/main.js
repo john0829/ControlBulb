@@ -24,13 +24,13 @@ function AjaxGet(apiUrl,callback){
 
 function TurnOnBulb(){
 	$("#openLight").click(function(){
-		// alert("open!");
+		console.log("open!");
 		UploadOnData();
 
 	});
 
 	$("#closeLight").click(function(){
-		//alert("open!");
+		console.log("close!");
 		UploadOffData();
 	});
 }

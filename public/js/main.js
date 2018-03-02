@@ -38,11 +38,11 @@ function TurnOnBulb(){
 function UploadOnData(){
 	var apiUrl = GetServerUrl() + "/switch/on";
 	var callback = function(msg){
-		var object = JSON.parse(msg);
-		if(object.success)
-		{
-			console.log("success");
-		}
+		// var object = JSON.parse(msg);
+		// if(object.success)
+		// {
+		// 	console.log("success");
+		// }
 	}
 	AjaxGet(apiUrl,callback);
 }
@@ -50,11 +50,11 @@ function UploadOnData(){
 function UploadOffData(){
 	var apiUrl = GetServerUrl() + "/switch/off";
 	var callback = function(msg){
-		var object = JSON.parse(msg);
-		if(object.success)
-		{
-			console.log("success");
-		}
+		// var object = JSON.parse(msg);
+		// if(object.success)
+		// {
+		// 	console.log("success");
+		// }
 	}
 	AjaxGet(apiUrl,callback);
 }

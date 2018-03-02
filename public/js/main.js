@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	TurnOnBulb();
+	SetTimeSelect();
 });
 
 
@@ -38,11 +39,6 @@ function TurnOnBulb(){
 function UploadOnData(){
 	var apiUrl = GetServerUrl() + "/switch/on";
 	var callback = function(msg){
-		// var object = JSON.parse(msg);
-		// if(object.success)
-		// {
-		// 	console.log("success");
-		// }
 	}
 	AjaxGet(apiUrl,callback);
 }
@@ -50,11 +46,47 @@ function UploadOnData(){
 function UploadOffData(){
 	var apiUrl = GetServerUrl() + "/switch/off";
 	var callback = function(msg){
-		// var object = JSON.parse(msg);
-		// if(object.success)
-		// {
-		// 	console.log("success");
-		// }
 	}
 	AjaxGet(apiUrl,callback);
 }
+
+function SetTimeSelect(){
+	for(i = 0 ; i < 24 ; i++)
+		$("#hours").append("<option value = " + i + ">" + i + "</option>");
+	for(i = 0 ; i < 60 ; i++)
+		$("#minutes").append("<option value = " + i + ">" + i + "</option>");
+	for(i = 0 ; i < 60 ; i++)
+		$("#seconds").append("<option value = " + i + ">" + i + "</option>");
+}
+
+function GetClockTimeFromUser(){
+	CheckTime(0);
+}
+
+// function he(i){
+// 	i = i + 1;
+// 	console.log(i);
+// 	timeId = setTimeout(function(){he(i)}, 1000);
+// 	if(i == 10)
+// 		clearTimeout(timeId);
+// }
+
+function CheckTime(time){
+	var clockTimeList = [];
+	clockTimeList.push($("#hours").val());
+	clockTimeList.push($("#minutes").val());
+	clockTimeList.push($("#seconds").val());
+
+	time = time + 1;
+	console.log(time);
+	timeId = setTimeout(function(){CheckTime(time)}, 1000);
+
+	var currentdate = new Date(); 
+    if((currentdate.getHours() == clockTimeList[0]) && 
+       (currentdate.getMinutes() == clockTimeList[1]) &&
+       (currentdate.getSeconds() == clockTimeList[2])){
+		clearTimeout(timeId);
+		UploadOnData();
+	}
+}
+

@@ -4,7 +4,7 @@ $(document).ready(function(){
 
 
 function GetServerUrl(){
-	return "http://192.168.1.20:3000";
+	return "http://192.168.1.20";
 }
 
 function AjaxGet(apiUrl,callback){

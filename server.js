@@ -8,4 +8,4 @@ new SwitchServer(SwitchRouter);
 var app = express();
 app.use('/switch', SwitchRouter);
 app.use(express.static('public'));
-app.listen(3000);
+app.listen(80);

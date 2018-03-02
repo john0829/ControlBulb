@@ -14,11 +14,11 @@
 
 #button > div:nth-child(1){
 	background-color: orange;
-	width:50%;
+	width:55%;
 	margin-bottom: 10%;
 }
 
 #button > div:nth-child(2){
 	background-color: red;
-	width:50%;
+	width:55%;
 }

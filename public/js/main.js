@@ -1,5 +1,6 @@
 $(document).ready(function(){
 	TurnOnBulb();
+	SetNowTime();
 	SetTimeSelect();
 });
 
@@ -59,6 +60,11 @@ function SetTimeSelect(){
 		$("#seconds").append("<option value = " + i + ">" + i + "</option>");
 }
 
+function SetNowTime(){
+	var currentdate = new Date();
+	$("#timeString").text(currentdate.getHours() + ":" + currentdate.getMinutes() + ":" + currentdate.getSeconds());
+}
+
 function GetClockTimeFromUser(){
 	CheckTime(0);
 }
@@ -78,10 +84,10 @@ function CheckTime(time){
 	clockTimeList.push($("#seconds").val());
 
 	time = time + 1;
-	console.log(time);
+	var currentdate = new Date(); 
+	console.log($("#hours").val() + $("#minutes").val() + $("#seconds").val() + "nowTime:" +currentdate.getHours() + currentdate.getMinutes() + currentdate.getSeconds());
 	timeId = setTimeout(function(){CheckTime(time)}, 1000);
 
-	var currentdate = new Date(); 
     if((currentdate.getHours() == clockTimeList[0]) && 
        (currentdate.getMinutes() == clockTimeList[1]) &&
        (currentdate.getSeconds() == clockTimeList[2])){

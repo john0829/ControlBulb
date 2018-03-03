@@ -85,8 +85,9 @@ function CheckTime(time){
 
 	time = time + 1;
 	var currentdate = new Date(); 
-	console.log($("#hours").val() + $("#minutes").val() + $("#seconds").val() + "nowTime:" +currentdate.getHours() + currentdate.getMinutes() + currentdate.getSeconds());
-	timeId = setTimeout(function(){CheckTime(time)}, 1000);
+	console.log($("#hours").val() + ":" + $("#minutes").val() + ":" + $("#seconds").val() + 
+		"nowTime:" + currentdate.getHours() + ":" + currentdate.getMinutes() + ":" +currentdate.getSeconds());
+	timeId = setTimeout(function(){CheckTime(time)}, 200);
 
     if((currentdate.getHours() == clockTimeList[0]) && 
        (currentdate.getMinutes() == clockTimeList[1]) &&

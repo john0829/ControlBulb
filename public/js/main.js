@@ -69,14 +69,6 @@ function GetClockTimeFromUser(){
 	CheckTime(0);
 }
 
-// function he(i){
-// 	i = i + 1;
-// 	console.log(i);
-// 	timeId = setTimeout(function(){he(i)}, 1000);
-// 	if(i == 10)
-// 		clearTimeout(timeId);
-// }
-
 function CheckTime(time){
 	var clockTimeList = [];
 	clockTimeList.push($("#hours").val());

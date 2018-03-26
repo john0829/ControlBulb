@@ -17,7 +17,7 @@ module.exports = class SwitchServer{
 
 		self.router.get('/on',function(req,res){
 			console.log("on!");
-			new SwitchManager().TurnOnBulb(req.user)
+			new SwitchManager().TurnOnBulb(req.user);
 			res.end("It's On");
 		});
 
